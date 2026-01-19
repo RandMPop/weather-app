@@ -1,0 +1,27 @@
+.forecast_main{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: space-between;
+    min-height: fit-content;
+    max-height: 315px;
+}
+.forecast_main__temp{
+    font-size: 4.3rem;
+}
+.forecast_main__celsius{
+    font-size: 2rem;
+}
+.forecast_main__feels-like{
+    color:rgba(78, 49, 170, 1);
+}
+.forecast_main__description{
+    color:rgba(78, 49, 170, 1);
+}
+.forecast_main__img{
+    position: absolute;
+    top:0;
+    right: 0;
+}

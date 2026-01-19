@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+}
+.header_add, .header_settings{
+    background-color: transparent;
+    border:none;
+    padding: 0;
+
+}
+.header_add img, .header_settings img{
+    width:60px;
+}
+.header_location{
+    font-size: 52px;
+    margin:0;
+}

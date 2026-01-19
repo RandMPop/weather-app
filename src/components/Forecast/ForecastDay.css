@@ -1,0 +1,14 @@
+.forecast_day{
+    display:flex;
+    gap:20px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    max-width: 690px;
+    min-height: 170px;
+    max-height: max-content;
+}
+.forecast_day__1hour{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

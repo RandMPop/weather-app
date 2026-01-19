@@ -1,0 +1,23 @@
+.forecast{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+.forecast_sector{
+    background-color: rgba(247, 247, 248, 1);
+    border-radius: 44px;
+    color:rgba(58, 16, 120, 1);
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 13px;
+}
+.forecast_main{
+    flex:5;
+}
+.forecast_day{
+    flex:3;
+}
+.forecast_week{
+    flex:3;
+}

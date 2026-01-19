@@ -1,0 +1,15 @@
+.forecast_week{
+    display:flex;
+    gap:20px;
+    max-width: 690px;
+    min-height: 170px;
+    max-height: max-content;
+}
+.forecast_week__1day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.forecast_week__weekday{
+    font-size: 1.2rem;
+}
