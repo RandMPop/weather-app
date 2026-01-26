@@ -7,10 +7,10 @@
 .forecast_sector{
     background-color: rgba(247, 247, 248, 1);
     border-radius: 44px;
-    color:rgba(58, 16, 120, 1);
+    color:var(--color-primary);
     font-weight: 600;
     box-sizing: border-box;
-    padding: 13px;
+    padding: 15px;
 }
 .forecast_main{
     flex:5;

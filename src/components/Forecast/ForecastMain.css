@@ -15,10 +15,10 @@
     font-size: 2rem;
 }
 .forecast_main__feels-like{
-    color:rgba(78, 49, 170, 1);
+    color:var(--color-primary)
 }
 .forecast_main__description{
-    color:rgba(78, 49, 170, 1);
+    color:var(--color-secondary);
 }
 .forecast_main__img{
     position: absolute;

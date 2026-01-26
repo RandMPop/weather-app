@@ -5,7 +5,7 @@ function ParametersRecommendation () {
             <h2 className='parameters_recommendation__header parameters__header'>
                 Рекомендация дня
             </h2>
-            <div className='parameters_recommendation__text'>Следует нанести SPF</div>
+            <p className='parameters_recommendation__text'>Следует нанести SPF</p>
         </div>
     )
 };
