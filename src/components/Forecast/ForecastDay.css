@@ -5,10 +5,11 @@
     scrollbar-width: none;
     max-width: 690px;
     min-height: 170px;
-    max-height: max-content;
+    align-items: center;
 }
 .forecast_day__1hour{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap:5px;
 }

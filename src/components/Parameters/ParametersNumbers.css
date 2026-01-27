@@ -1,0 +1,11 @@
+.parameters_numbers .parameters_sector{
+    min-height: 190px;
+    max-height: 240px;
+}
+.parameters_numbers__value{
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+}
+.parameters_numbers__comment{
+    margin:0;
+}

@@ -3,6 +3,7 @@
     display:flex;
     flex-direction: column;
     gap:20px;
+    max-height: 890px;
 }
 .parameters_sector{
     background-color: rgba(247, 247, 248, 1);
@@ -29,5 +30,4 @@
     margin: 0 0 10px;
     font-size: 30px;
     color: var(--color-secondary);
-
 }

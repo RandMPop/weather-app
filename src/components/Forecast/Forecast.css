@@ -3,6 +3,7 @@
     display:flex;
     flex-direction: column;
     gap:20px;
+    max-height: 890px;
 }
 .forecast_sector{
     background-color: rgba(247, 247, 248, 1);
