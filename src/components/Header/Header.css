@@ -10,9 +10,11 @@
 
 }
 .header_add img, .header_settings img{
-    width:60px;
+    width:2rem;
 }
 .header_location{
-    font-size: 52px;
+    font-size: clamp(1.26rem,4vw,1.73rem);
     margin:0;
+    display: flex;
+    align-items: center;
 }

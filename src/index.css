@@ -3,9 +3,9 @@
   --color-primary:rgba(58, 16, 120, 1);
   --color-secondary: rgba(78, 49, 170, 1);
 }
-html, body {
+html{
+  font-size: clamp(20px,2vw,30px);
   height: 100%;
-  font-size: 30px;
 }
 body{
   margin:0;

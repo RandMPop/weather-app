@@ -8,7 +8,6 @@
     background-color: rgba(247, 247, 248, 1);
     border-radius: 44px;
     color:rgba(58, 16, 120, 1);
-    font-size: 30px;
     font-weight: 600;
     box-sizing: border-box;
     padding: 15px;
@@ -19,13 +18,13 @@
 .parameters_numbers{
     flex:4;
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,auto));
+    grid-template-columns: repeat(2,1fr);
     gap:20px;
     padding: 0;
 }
 
 .parameters h2{
     margin: 0 0 10px;
-    font-size: 30px;
+    font-size: 1rem;
     color: var(--color-secondary);
 }

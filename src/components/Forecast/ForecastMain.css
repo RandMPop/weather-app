@@ -9,7 +9,7 @@
     max-height: 315px;
 }
 .forecast_main__temp{
-    font-size: 4.3rem;
+    font-size:4.3rem;
 }
 .forecast_main__celsius{
     font-size: 2rem;
@@ -24,4 +24,5 @@
     position: absolute;
     top:0;
     right: 0;
+    width:20%;
 }

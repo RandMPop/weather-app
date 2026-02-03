@@ -1,7 +1,6 @@
 .parameters_numbers .parameters_sector{
-    min-height: 190px;
+    min-height: 150px;
     max-height: 240px;
-    min-width: 260px;
 }
 .parameters_numbers__value{
     font-size: 3.2rem;

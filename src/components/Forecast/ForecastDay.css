@@ -6,10 +6,19 @@
     max-width: 690px;
     min-height: 170px;
     align-items: center;
+    cursor: grab;
+    user-select: none;
+}
+.forecast_day:active{
+    cursor: grabbing;
 }
 .forecast_day__1hour{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:5px;
+    flex: 0 0 clamp(50px, 10vw, 77px)
+}
+.forecast_day__img{
+    max-width: 100%;
 }
