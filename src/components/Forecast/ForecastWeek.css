@@ -4,6 +4,8 @@
     max-width: 690px;
     min-height: 170px;
     align-items: center;
+    overflow-x: scroll;
+    scrollbar-width: none;
 }
 .forecast_week__1day{
     display: flex;
