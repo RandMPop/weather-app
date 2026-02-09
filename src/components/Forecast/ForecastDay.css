@@ -1,7 +1,7 @@
 .forecast_day{
     display:flex;
     gap:20px;
-    overflow-x: scroll;
+    overflow-x: auto;
     scrollbar-width: none;
     max-width: 690px;
     min-height: 170px;
@@ -21,4 +21,5 @@
 }
 .forecast_day__img{
     max-width: 100%;
+    -webkit-user-drag: none;
 }

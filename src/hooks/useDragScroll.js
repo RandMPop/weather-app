@@ -18,9 +18,9 @@ export function useDragScroll(ref) {
 
         const onMouseMove = e => {
             if (!isDown) return;
-            e.prevenrDefault();
+            e.preventDefault();
             const x = e.pageX - el.offsetLeft;
-            const walk = (x - startXtart) * 2;
+            const walk = (x - startX) * 2;
             el.scrollLeft = scrollLeft - walk;
         };
 
