@@ -1,21 +1,18 @@
 import './App.css';
-import Container from './components/Container/Container';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Forecast from './components/Forecast/Forecast';
-import Parameters from './components/Parameters/Parameters';
+import {Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
+import Cities from "./pages/Cities";
+import Settings from "./pages/Settings";
 
 function App() {
 
   return (
-    <Container>
-      <Header></Header>
-      <Main>
-        <Forecast></Forecast>
-        <Parameters></Parameters>
-      </Main>
-    </Container>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/cities" element={<Cities />}/>
+      <Route path= "/settings" element={<Settings />}/>
+    </Routes>
   )
 }
 
-export default App
+export default App;

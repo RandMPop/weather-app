@@ -1,16 +1,21 @@
 import "./Header.css";
 import plusIcon from "../../assets/icons/plus.svg";
 import settingsIcon from "../../assets/icons/settings.svg";
-function Header(){
-    return(
+import { Link } from "react-router-dom";
+function Header() {
+    return (
         <header className="header">
-            <button className="header_add">
-                <img src={plusIcon} alt="Добавить город"/>
-            </button>
+            <Link to="/cities">
+                <button className="header_add">
+                    <img src={plusIcon} alt="Добавить город" />
+                </button>
+            </Link>
             <h1 className="header_location">Город 1</h1>
-            <button className="header_settings">
-                <img src={settingsIcon} alt="Открыть настройки"/>
-            </button>
+            <Link to="/settings">
+                <button className="header_settings">
+                    <img src={settingsIcon} alt="Открыть настройки" />
+                </button>
+            </Link>
         </header>
     );
 }
