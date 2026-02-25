@@ -4,14 +4,7 @@
     flex-direction: column;
     gap:20px;
 }
-.parameters_sector{
-    background-color: rgba(247, 247, 248, 1);
-    border-radius: 44px;
-    color:rgba(58, 16, 120, 1);
-    font-weight: 600;
-    box-sizing: border-box;
-    padding: 15px;
-}
+
 .parameters_recommendation{
     flex:1;
 }

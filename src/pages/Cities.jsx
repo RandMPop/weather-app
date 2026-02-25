@@ -1,8 +1,14 @@
+import CitiesChose from "../components/Cities/CitiesChose";
+import CitiesList from "../components/Cities/CitiesList";
+
 function Cities() {
 
   return (
-    <h1>Выберете город</h1>
-  )
+      <>
+        <CitiesChose />
+        <CitiesList />
+      </>
+  );
 }
 
 export default Cities

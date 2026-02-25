@@ -19,3 +19,11 @@ body{
 #root {
   width: 100%;
 }
+.sector{
+    background-color: rgba(247, 247, 248, 1);
+    border-radius: 44px;
+    color:var(--color-primary);
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 15px;
+}

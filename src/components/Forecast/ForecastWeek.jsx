@@ -1,7 +1,7 @@
 import "./ForecastWeek.css"
 function ForecastWeek() {
     return (
-        <div className="forecast_week forecast_sector">
+        <div className="sector forecast_week forecast_sector">
             <div className="forecast_week__1day">
                 <div className="forecast_week__weekday">пн</div>
                 <img className="forecast_week__img" src="/icons/weather/sun.svg" />

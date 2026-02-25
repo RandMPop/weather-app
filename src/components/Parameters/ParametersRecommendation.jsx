@@ -1,7 +1,7 @@
 import './ParametersRecommendation.css';
 function ParametersRecommendation () {
     return (
-        <div className="parameters_recommendation parameters_sector">
+        <div className="sector parameters_recommendation parameters_sector">
             <h2 className='parameters_recommendation__header parameters__header'>
                 Рекомендация дня
             </h2>
