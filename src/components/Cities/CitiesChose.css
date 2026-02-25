@@ -1,0 +1,27 @@
+.cities_chose__container{
+    position: sticky;
+    top:0;
+    background-color: var(--color-primary);
+    margin-top: -30px;
+}
+.cities_chose__input{
+    border: none;
+    max-width: 690px;
+    width:100%;
+    margin:30px auto 20px;
+    display: block;
+    height: max-content;
+    font-size: clamp(1.26rem,4vw,1.73rem);
+    color: var(--color-secondary);
+}
+.cities_chose__input:focus{
+    outline: 5px solid var(--color-highlight);
+}
+.cities_chose__input::placeholder{
+    font-size: clamp(1.26rem,4vw,1.73rem);
+    color: var(--color-secondary);
+    transition: opacity 0.2s ease;
+}
+.cities_chose__input:focus::placeholder{
+    opacity: 0;
+}

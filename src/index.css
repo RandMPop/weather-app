@@ -1,7 +1,8 @@
 @import url('./assets/fonts/fonts.css');
 :root{
   --color-primary:rgba(58, 16, 120, 1);
-  --color-secondary: rgba(78, 49, 170, 1);
+  --color-secondary: #4e31aa;
+  --color-highlight: #7C5CFF;
 }
 html{
   font-size: clamp(20px,2vw,30px);
