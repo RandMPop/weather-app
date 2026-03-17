@@ -1,27 +1,66 @@
-.cities_chose__container{
+.cities_chose__container {
     position: sticky;
-    top:0;
+    top: 0;
     background-color: var(--color-primary);
     margin-top: -30px;
+    display: flex;
+    justify-content: space-between;
+    container-type: inline-size;
 }
-.cities_chose__input{
+
+.cities_chose__wrapper {
     border: none;
     max-width: 690px;
-    width:100%;
-    margin:30px auto 20px;
+    width: 100%;
+    margin: 30px auto 20px;
     display: block;
     height: max-content;
-    font-size: clamp(1.26rem,4vw,1.73rem);
+    font-size: clamp(1.26rem, 4vw, 1.73rem);
     color: var(--color-secondary);
+    position: relative;
 }
-.cities_chose__input:focus{
+.cities_chose__wrapper:focus-within {
     outline: 5px solid var(--color-highlight);
 }
-.cities_chose__input::placeholder{
-    font-size: clamp(1.26rem,4vw,1.73rem);
+
+.cities_chose__input {
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    width: 100%;
+    padding-right: 50px;
+    box-sizing: border-box;
+    min-height: 40px;
+}
+
+.cities_chose__input::placeholder {
+    font-size: clamp(1.26rem, 4vw, 1.73rem);
     color: var(--color-secondary);
     transition: opacity 0.2s ease;
 }
-.cities_chose__input:focus::placeholder{
+
+.cities_chose__input:focus::placeholder {
     opacity: 0;
+}
+
+.cities_chose__icon{
+    position: absolute;
+    right: 10px;
+    width: 2rem;
+}
+.cities_chose__back{
+    width: 2rem;
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+@container (max-width:800px){
+    .cities_chose__back{
+        position: relative;
+        align-self: center;
+        margin-left: 5px;
+    }
 }
