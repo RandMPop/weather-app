@@ -1,6 +1,7 @@
+import SettingsList from "../components/Settings/SettingsList.jsx"
 function Settings() {
     return(
-        <h1>Настройки</h1>
+        <SettingsList />
     );
 }
 export default Settings;
