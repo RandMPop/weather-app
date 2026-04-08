@@ -10,7 +10,7 @@ function Header() {
                     <img src={plusIcon} alt="Добавить город" />
                 </button>
             </Link>
-            <h1 className="header_location">Город 1</h1>
+            <h1 className="header_location">Москва</h1>
             <Link to="/settings">
                 <button className="header_settings">
                     <img src={settingsIcon} alt="Открыть настройки" />
