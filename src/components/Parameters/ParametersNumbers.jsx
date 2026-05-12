@@ -20,7 +20,7 @@ function ParametersNumbers() {
                 <h2 className='parameters_numbers__header'>Ветер</h2>
                 <span className='parameters_numbers__value'>{weather?.windSpeed !== null ? weather?.windSpeed : '--'}</span>
                 <span className='parameters_numbers__unit'>м/с</span>
-                <p className='parameters_numbers__comment'>Порывы: {weather?.windGusts !== null ? weather?.windGusts : '--'}</p>
+                <p className='parameters_numbers__comment'>Порывы: {weather?.windGusts !== null ? weather?.windGusts : '--'}м/с</p>
             </div>
             <div className="sector parameters_sector parameters_numbers__humidity">
                 <h2 className='parameters_numbers__header'>Влажность</h2>

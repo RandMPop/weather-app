@@ -12,8 +12,8 @@ function ForecastMain () {
                 <sup className="forecast_main__celsius">°C</sup></div>
             <div className="forecast_main__feels-like">Ощущается как {weather?.apparentTemp !== null ? weather?.apparentTemp : '--'}°C
                 </div>
-            <div className="forecast_main__description">Облачно</div>
-            <img className="forecast_main__img" src="/icons/weather/partial_sun.svg" alt="Солнечно"/>
+            <div className="forecast_main__description">{weather?.weatherDescription !== null ? weather?.weatherDescription : '--'}</div>
+            <img className="forecast_main__img" src={weather?.weatherIcon} alt="Иконка погоды"/>
         </div>
     );
 }
