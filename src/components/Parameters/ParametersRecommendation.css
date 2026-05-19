@@ -3,4 +3,5 @@
 }
 .parameters_recommendation__text{
     margin:0 0 5px;
+    white-space: pre-line;
 }
