@@ -3,6 +3,7 @@ import { getWeather } from "../services/weatheAPI";
 import { getWeatherDescription } from "../services/getWeatherDescription";
 import { getWeatherIcon } from "../services/getWeatherIcon";
 import { getRecommendations } from "../services/getRecommendations";
+import { getHourlyTemp } from "../services/getHourlyTemp";
 
 export function useWeather (){
     const [weather, setWeather] = useState(null);
@@ -22,7 +23,12 @@ export function useWeather (){
                     data.uvIndex, 
                     data.humidity, 
                     data.isDay
-                )
+                ),
+                hourlyTemp: getHourlyTemp(
+                    data.currentTime,
+                    data.hourlyTime,
+                    data.hourlyTemp
+                ),
             };
 
             setWeather(formatted);
