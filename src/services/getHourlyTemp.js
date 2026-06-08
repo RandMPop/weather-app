@@ -15,7 +15,6 @@ export function getHourlyTemp(now, hours, temps) {
     const hourlyTemp = temps
         .slice(currentHourIndex, currentHourIndex + 12)
         .map(temp => Math.round(temp));
-    console.log(hourlyTime, hourlyTemp);
     return {
         hourlyTime,
         hourlyTemp,
