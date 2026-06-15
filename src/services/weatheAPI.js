@@ -4,7 +4,7 @@ export async function getWeather() {
         latitude: 55.7558,
         longitude: 37.6173,
         daily: ["uv_index_max"],
-        hourly: "temperature_2m",
+        hourly: ["temperature_2m", "weather_code"],
         current: ["temperature_2m", "apparent_temperature", "wind_speed_10m", "wind_gusts_10m", "surface_pressure", "weather_code", "relative_humidity_2m", "is_day"],
         timezone: "Europe/Moscow",
     };
@@ -37,13 +37,16 @@ export async function getWeather() {
                     },
                     (_, i) =>
                         new Date(
-                            (Number(hourly.time()) + i * hourly.interval() 
+                            (Number(hourly.time()) + i * hourly.interval()
                                 // + utcOffsetSeconds
                             ) * 1000
                         )
                 ),
                 temperature_2m: hourly.variables(0)
                     ? hourly.variables(0).valuesArray()
+                    : null,
+                weather_code: hourly.variables(0)
+                    ? hourly.variables(1).valuesArray()
                     : null,
             },
             daily: {
@@ -52,6 +55,7 @@ export async function getWeather() {
         };
         // console.log(weatherData.current.time);
         // console.log(weatherData.hourly.time, weatherData.hourly.temperature_2m);
+        // console.log(weatherData.hourly.weather_code);
 
         return {
             temp: Math.round(weatherData.current.temperature_2m),
@@ -66,6 +70,7 @@ export async function getWeather() {
             currentTime: weatherData.current.time,
             hourlyTime: weatherData.hourly.time,
             hourlyTemp: weatherData.hourly.temperature_2m,
+            hourlyCode: weatherData.hourly.weather_code,
         }
     } catch (error) {
         console.log("Network error:", error)
