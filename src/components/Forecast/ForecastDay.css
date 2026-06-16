@@ -22,5 +22,7 @@
 }
 .forecast_day__img{
     max-width: 100%;
+    min-width:70px;
+    aspect-ratio: 1/1;
     -webkit-user-drag: none;
 }

@@ -13,7 +13,7 @@ export function useWeather (){
             const formatted = {
                 ...data,
                 weatherDescription: getWeatherDescription(data.code),
-                weatherIcon: getWeatherIcon(data.code, data.isDay),
+                weatherIcon: getWeatherIcon(data.code, data.isDay,"partial"),
                 weatherRecommendations: getRecommendations(
                     data.temp, 
                     data.windSpeed, 

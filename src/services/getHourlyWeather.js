@@ -2,6 +2,7 @@ import { getWeatherIcon } from "./getWeatherIcon";
 
 export function getHourlyWeather(now, hours, temps, codes) {
     const hourNow = now.setMinutes(0, 0, 0);
+    
     const currentHourIndex = hours.findIndex(
         hour => hour.getTime() === +hourNow
     );
@@ -14,13 +15,20 @@ export function getHourlyWeather(now, hours, temps, codes) {
                 hour12: false,
             })
         );
+
     const hourlyTemp = temps
         .slice(currentHourIndex, currentHourIndex + 12)
         .map(temp => Math.round(temp));
 
+    const iconHours = hours.slice(currentHourIndex, currentHourIndex + 12);    
+    const hourlyCode = Array.from(codes
+        .slice(currentHourIndex, currentHourIndex + 12))
+        .map((code, index) => {
+            const hour = iconHours[index].getHours();
+            const isDay = (hour > 5)&&( hour < 17);
+            return getWeatherIcon(code,isDay,"full");
+        });
 
-const hourlyCode = Array.from(codes.slice(currentHourIndex, currentHourIndex + 12))
-  .map(code => getWeatherIcon(code, 1));
     return {
         hourlyTime,
         hourlyTemp,
