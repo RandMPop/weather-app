@@ -4,6 +4,7 @@ import { getWeatherDescription } from "../services/getWeatherDescription";
 import { getWeatherIcon } from "../services/getWeatherIcon";
 import { getRecommendations } from "../services/getRecommendations";
 import { getHourlyWeather } from "../services/getHourlyWeather";
+import { getWeeklyWeather } from "../services/getWeeklyWeather";
 
 export function useWeather (){
     const [weather, setWeather] = useState(null);
@@ -29,6 +30,11 @@ export function useWeather (){
                     data.hourlyTime,
                     data.hourlyTemp,
                     data.hourlyCode
+                ),
+                weeklyWeather: getWeeklyWeather(
+                    data.weeklyDates,
+                    data.weeklyTemp,
+                    data.weeklyCode
                 ),
             };
 

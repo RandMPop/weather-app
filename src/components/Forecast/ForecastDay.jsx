@@ -14,7 +14,7 @@ function ForecastDay() {
     const ref = useRef(null);
 
     useDragScroll(ref);
-
+    
     return (
         <div ref={ref} className="sector forecast_day forecast_sector">
             {times.map((time, index) => (

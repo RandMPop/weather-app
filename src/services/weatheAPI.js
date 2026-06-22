@@ -3,7 +3,7 @@ export async function getWeather() {
     const params = {
         latitude: 55.7558,
         longitude: 37.6173,
-        daily: ["uv_index_max"],
+        daily: ["uv_index_max", "weather_code", "temperature_2m_max"],
         hourly: ["temperature_2m", "weather_code"],
         current: ["temperature_2m", "apparent_temperature", "wind_speed_10m", "wind_gusts_10m", "surface_pressure", "weather_code", "relative_humidity_2m", "is_day"],
         timezone: "Europe/Moscow",
@@ -37,9 +37,7 @@ export async function getWeather() {
                     },
                     (_, i) =>
                         new Date(
-                            (Number(hourly.time()) + i * hourly.interval()
-                                // + utcOffsetSeconds
-                            ) * 1000
+                            (Number(hourly.time()) + i * hourly.interval()) * 1000
                         )
                 ),
                 temperature_2m: hourly.variables(0)
@@ -50,12 +48,26 @@ export async function getWeather() {
                     : null,
             },
             daily: {
+                time: Array.from(
+                    {
+                        length: (Number(daily.timeEnd()) - Number(daily.time())) / daily.interval()
+                    },
+                    (_, i) => new Date(
+                        (Number(daily.time()) + i * daily.interval()) * 1000)
+                ),
                 uv_index_max: daily.variables(0) ? daily.variables(0).valuesArray()[0] : null,
+                weather_code: daily.variables(1)
+                    ? daily.variables(1).valuesArray()
+                    : null,
+                temperature_2m_max: daily.variables(2)
+                    ? daily.variables(2).valuesArray()
+                    : null,
             },
         };
-        // console.log(weatherData.current.time);
-        // console.log(weatherData.hourly.time, weatherData.hourly.temperature_2m);
-        // console.log(weatherData.hourly.weather_code);
+        // console.log(weatherData.daily.time);
+        // console.log(weatherData.daily.uv_index_max);
+        // console.log(weatherData.daily.weather_code);
+        // console.log(weatherData.daily.temperature_2m_max);
 
         return {
             temp: Math.round(weatherData.current.temperature_2m),
@@ -64,13 +76,16 @@ export async function getWeather() {
             windGusts: Math.round(weatherData.current.wind_gusts_10m),
             preassure: Math.round(weatherData.current.surface_pressure),
             code: weatherData.current.weather_code,
-            uvIndex: Math.round(weatherData.daily.uv_index_max),
             humidity: weatherData.current.relative_humidity_2m,
             isDay: weatherData.current.is_day,
             currentTime: weatherData.current.time,
             hourlyTime: weatherData.hourly.time,
             hourlyTemp: weatherData.hourly.temperature_2m,
             hourlyCode: weatherData.hourly.weather_code,
+            weeklyDates: weatherData.daily.time,
+            uvIndex: Math.round(weatherData.daily.uv_index_max),
+            weeklyCode: weatherData.daily.weather_code,
+            weeklyTemp: weatherData.daily.temperature_2m_max
         }
     } catch (error) {
         console.log("Network error:", error)
