@@ -5,6 +5,7 @@ import { getWeatherIcon } from "../services/getWeatherIcon";
 import { getRecommendations } from "../services/getRecommendations";
 import { getHourlyWeather } from "../services/getHourlyWeather";
 import { getWeeklyWeather } from "../services/getWeeklyWeather";
+import { getUVIndex } from "../services/getUVIndex";
 
 export function useWeather (){
     const [weather, setWeather] = useState(null);
@@ -25,6 +26,7 @@ export function useWeather (){
                     data.humidity, 
                     data.isDay
                 ),
+                uvIndexDescription: getUVIndex(data.uvIndex),
                 hourlyWeather: getHourlyWeather(
                     data.currentTime,
                     data.hourlyTime,

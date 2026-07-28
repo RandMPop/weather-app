@@ -9,7 +9,7 @@ function ParametersNumbers() {
             <div className="sector parameters_sector parameters_numbers__uv">
                 <h2 className='parameters_numbers__header'>Макс. UV-индекс</h2>
                 <span className='parameters_numbers__value'>{weather?.uvIndex !== null ? weather?.uvIndex : '--'}</span>
-                <p className='parameters_numbers__comment'>Умеренный</p>
+                <p className='parameters_numbers__comment'>{weather?.uvIndexDescription !== null ? weather?.uvIndexDescription : '--'}</p>
             </div>
             <div className="sector parameters_sector parameters_numbers__preassure">
                 <h2 className='parameters_numbers__header'>Давление</h2>

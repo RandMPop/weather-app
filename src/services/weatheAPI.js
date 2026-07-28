@@ -1,5 +1,6 @@
 import { fetchWeatherApi } from "openmeteo";
-export async function getWeather() {
+
+export async function getWeather(city) {
     const params = {
         latitude: 55.7558,
         longitude: 37.6173,
@@ -8,6 +9,16 @@ export async function getWeather() {
         current: ["temperature_2m", "apparent_temperature", "wind_speed_10m", "wind_gusts_10m", "surface_pressure", "weather_code", "relative_humidity_2m", "is_day"],
         timezone: "Europe/Moscow",
     };
+
+    // const params = {
+    //     latitude: city.latitude,
+    //     longitude: city.longitude,
+    //     daily: ["uv_index_max", "weather_code", "temperature_2m_max"],
+    //     hourly: ["temperature_2m", "weather_code"],
+    //     current: ["temperature_2m", "apparent_temperature", "wind_speed_10m", "wind_gusts_10m", "surface_pressure", "weather_code", "relative_humidity_2m", "is_day"],
+    //     timezone: city.timezone,
+    // };
+
     const url = "https://api.open-meteo.com/v1/forecast";
     try {
         const responses = await fetchWeatherApi(url, params);
@@ -64,11 +75,6 @@ export async function getWeather() {
                     : null,
             },
         };
-        // console.log(weatherData.daily.time);
-        // console.log(weatherData.daily.uv_index_max);
-        // console.log(weatherData.daily.weather_code);
-        // console.log(weatherData.daily.temperature_2m_max);
-
         return {
             temp: Math.round(weatherData.current.temperature_2m),
             apparentTemp: Math.round(weatherData.current.apparent_temperature),
