@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./CitiesChose.css";
 import searchIcon from "../../assets/icons/search.svg";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import { Link } from "react-router-dom";
+import { searchCities } from "../../services/geocodingAPI";
 function CitiesChose() {
     const[query, setQuery] = useState("");
     const [cities, setCities] = useState([]);
+
+    useEffect(() => {
+        searchCities(query).then((results) => {
+            console.log("Результат поиска:", results);
+            setCities(results);
+        });
+    },[query]);
+
     return (
         <div className="cities_chose__container">
             <div className="sector cities_chose__wrapper">
