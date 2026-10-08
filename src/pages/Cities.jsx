@@ -1,12 +1,15 @@
+import { useState } from "react";
 import CitiesChose from "../components/Cities/CitiesChose";
 import CitiesList from "../components/Cities/CitiesList";
 
 function Cities() {
 
+  const [cities, setCities] = useState([]);
+
   return (
       <>
-        <CitiesChose />
-        <CitiesList />
+        <CitiesChose setCities={ setCities } />
+        <CitiesList cities = {cities}/>
       </>
   );
 }

@@ -4,16 +4,20 @@ import searchIcon from "../../assets/icons/search.svg";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import { Link } from "react-router-dom";
 import { searchCities } from "../../services/geocodingAPI";
-function CitiesChose() {
+
+function CitiesChose({ setCities }) {
     const[query, setQuery] = useState("");
-    const [cities, setCities] = useState([]);
 
     useEffect(() => {
+        if(!query.trim()){
+            setCities([]);
+            return
+        }
         searchCities(query).then((results) => {
             console.log("Результат поиска:", results);
             setCities(results);
         });
-    },[query]);
+    },[query,setCities]);
 
     return (
         <div className="cities_chose__container">
