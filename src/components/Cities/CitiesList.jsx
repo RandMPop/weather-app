@@ -19,6 +19,9 @@ function CitiesList({ cities }) {
                      <p className="cities_list__name">
                         {city.name}
                      </p>
+                    <p className="cities_list__location">
+                        {[city.country, city.region].filter(Boolean).join(", ")}
+                    </p>
                 </div>
                 
             ))}

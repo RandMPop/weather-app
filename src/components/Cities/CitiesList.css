@@ -12,12 +12,11 @@
     color: var(--color-secondary);
 }
 .cities_list__name{
-    margin: 0;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin: 0.5rem 0;
 }
-.cities_list__value{
-    font-size: 3.2rem;
-    line-height: 3.2rem;
-}
-.cities_list__celsius{
-    font-size: 1.6rem;
+.cities_list__location{
+    color: var(--color-secondary);
+    margin: 0.5rem 0;
 }
