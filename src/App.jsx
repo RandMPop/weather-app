@@ -8,17 +8,19 @@ import { WeatherProvider } from './context/WeatherContext';
 function App() {
 
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={
-          <WeatherProvider>
+    <WeatherProvider>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={
+
             <Home />
-          </WeatherProvider>
-        } />
-        <Route path="/cities" element={<Cities />} />
-        <Route path="/settings" element={<Settings />} />
-      </Route>
-    </Routes>
+
+          } />
+          <Route path="/cities" element={<Cities />} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
+      </Routes>
+    </WeatherProvider>
   )
 }
 

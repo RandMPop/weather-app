@@ -2,22 +2,13 @@ import { fetchWeatherApi } from "openmeteo";
 
 export async function getWeather(city) {
     const params = {
-        latitude: 55.7558,
-        longitude: 37.6173,
+        latitude: city.latitude,
+        longitude: city.longitude,
         daily: ["uv_index_max", "weather_code", "temperature_2m_max"],
         hourly: ["temperature_2m", "weather_code"],
         current: ["temperature_2m", "apparent_temperature", "wind_speed_10m", "wind_gusts_10m", "surface_pressure", "weather_code", "relative_humidity_2m", "is_day"],
-        timezone: "Europe/Moscow",
+        timezone: "auto",
     };
-
-    // const params = {
-    //     latitude: city.latitude,
-    //     longitude: city.longitude,
-    //     daily: ["uv_index_max", "weather_code", "temperature_2m_max"],
-    //     hourly: ["temperature_2m", "weather_code"],
-    //     current: ["temperature_2m", "apparent_temperature", "wind_speed_10m", "wind_gusts_10m", "surface_pressure", "weather_code", "relative_humidity_2m", "is_day"],
-    //     timezone: city.timezone,
-    // };
 
     const url = "https://api.open-meteo.com/v1/forecast";
     try {
@@ -36,7 +27,7 @@ export async function getWeather(city) {
                 wind_gusts_10m: current.variables(3) ? current.variables(3).value() : null,
                 surface_pressure: current.variables(4) ? current.variables(4).value() : null,
                 weather_code: current.variables(5) ? current.variables(5).value() : null,
-                relative_humidity_2m: current.variables(6) ? current.variables(6).value() : null,
+                relative_humidity_2m: Math.round (current.variables(6) ? current.variables(6).value() : null),
                 is_day: current.variables(7) ? current.variables(7).value() : null,
             },
             hourly: {

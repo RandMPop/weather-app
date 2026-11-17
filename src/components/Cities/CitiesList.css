@@ -6,6 +6,9 @@
     flex-direction: column;
     gap:20px;
 }
+.cities_list_1city{
+    cursor: pointer;
+}
 .cities_list__default{
     margin: 0 0 10px;
     font-size: 1rem;

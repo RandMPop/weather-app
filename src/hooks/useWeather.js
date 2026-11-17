@@ -7,10 +7,10 @@ import { getHourlyWeather } from "../services/getHourlyWeather";
 import { getWeeklyWeather } from "../services/getWeeklyWeather";
 import { getUVIndex } from "../services/getUVIndex";
 
-export function useWeather (){
+export function useWeather (city){
     const [weather, setWeather] = useState(null);
     useEffect(() => {
-        getWeather()
+        getWeather(city)
         .then((data) => {
             const formatted = {
                 ...data,
@@ -43,7 +43,7 @@ export function useWeather (){
             setWeather(formatted);
         })
         .catch(console.error);
-    },[]);
+    },[city]);
 
     return weather;
 }

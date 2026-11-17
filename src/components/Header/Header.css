@@ -11,6 +11,7 @@
 }
 .header_add img, .header_settings img{
     width:2rem;
+    cursor: pointer;
 }
 .header_location{
     font-size: clamp(1.26rem,4vw,1.73rem);

@@ -9,7 +9,8 @@ function ParametersRecommendation() {
                 Рекомендация дня
             </h2>
             <div className="parameters_recommendation__container">
-                <p className='parameters_recommendation__text'>{weather?.weatherRecommendations !== null ? weather?.weatherRecommendations.join('\n') : '--'}
+                <p className='parameters_recommendation__text'>
+                    {weather?.weatherRecommendations?.join('\n') ?? '--'}
                 </p>
             </div>
         </div>
